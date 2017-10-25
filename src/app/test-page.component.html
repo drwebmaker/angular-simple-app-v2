@@ -1,0 +1,12 @@
+<h1>Hello!!!</h1>
+<div>Факториал числа <input [(ngModel)]="x" name="x"> равен {{x | factorial}}</div>
+
+
+<div>Find phone <input [(ngModel)]="phone" name="phone"></div>
+<div>
+  <ul>
+  <li *ngFor="let phone of phones | findPhone: phone">{{ phone.model }}</li>
+</ul>
+</div>
+
+
