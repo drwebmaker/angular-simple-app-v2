@@ -23,6 +23,6 @@ export class TestPageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.httpService.getData().subscribe((data: Response) => this.users = data.json());
+    this.httpService.getData('/api/users.json').subscribe((data) => this.users = data);
   }
 }
