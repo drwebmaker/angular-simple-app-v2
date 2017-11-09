@@ -6,6 +6,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FactorialPipe implements PipeTransform {
   transform(value: number, args?: any): number {
 
+    if (typeof value !== 'number') {
+      throw new Error('Requires a Number as input');
+    }
+
     if (value <= 0) return 0;
 
     let result = 1;

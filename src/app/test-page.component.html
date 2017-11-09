@@ -1,12 +1,32 @@
-<h1>Hello!!!</h1>
+<h1>{{title}}</h1>
+<h2>Factorial</h2>
 <div>Факториал числа <input [(ngModel)]="x" name="x"> равен {{x | factorial}}</div>
 
-
+<h2>Find phone</h2>
 <div>Find phone <input [(ngModel)]="phone" name="phone"></div>
 <div>
   <ul>
   <li *ngFor="let phone of phones | findPhone: phone">{{ phone.model }}</li>
 </ul>
 </div>
+
+<h2>Show users from server(json)</h2>
+<div>
+  <ul>
+    <li *ngFor="let user of users">
+      <p>User name: {{user?.name}}</p>
+      <p>User age: {{user?.age}}</p>
+    </li>
+  </ul>
+
+</div>
+
+<h2>@Input @Output</h2>
+<div>
+  <child-comp [(userName)]="name"></child-comp>
+  <div>Selected name: {{name}}</div>
+</div>
+
+<h2>Dropdown</h2>
 
 

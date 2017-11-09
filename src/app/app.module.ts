@@ -1,13 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TestPageComponent } from './test-page.component';
 import { DashboardComponent } from './dashboard.component';
+import { OutputInputComponent } from './outputInput.component';
 
 import { FactorialPipe } from './factorial.pipe';
 import { FindPhone } from './find-phone.pipe';
+import {HttpModule} from '@angular/http';
+
+import { HttpService } from './http.service';
+
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -16,15 +21,18 @@ import { AppRoutingModule }     from './app-routing.module';
     AppComponent,
     TestPageComponent,
     DashboardComponent,
+    OutputInputComponent,
     FactorialPipe,
     FindPhone
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [HttpService],
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }
