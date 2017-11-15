@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService} from './http.service';
-import { Response, Http} from '@angular/http';
 
 import {User} from './user';
 
@@ -17,6 +16,12 @@ export class TestPageComponent implements OnInit {
   users: User[] = [];
 
   name: string = "Tom";
+  items: any = [];
+  dropdownTitle: string = "Button dropdown";
+
+  processSelectEvent (e) {
+    console.log(e);
+  }
 
   constructor(
     private httpService: HttpService
@@ -24,5 +29,6 @@ export class TestPageComponent implements OnInit {
 
   ngOnInit() {
     this.httpService.getData('/api/users.json').subscribe((data) => this.users = data);
+    this.httpService.getData('/api/items.json').subscribe((data) => this.items = data);
   }
 }

@@ -30,7 +30,7 @@ describe('TestPageComponent', () => {
   beforeEach(async(() => {
 
     class HttpServiceMock {
-      getData() {
+      getData(url: string) {
         return new Observable(observer => {
           setTimeout(() => {
             observer.next(jsonMock);
@@ -64,7 +64,7 @@ describe('TestPageComponent', () => {
   }));
 
   it('should return correct json', inject([HttpService], (testService: HttpService) => {
-    testService.getData().subscribe((data: Response) => {
+    testService.getData('data').subscribe((data: Response) => {
       console.log("data", data);
       expect(data.json()).toBe(jsonMock);
     });

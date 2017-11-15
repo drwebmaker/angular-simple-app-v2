@@ -1,4 +1,18 @@
 <h1>{{title}}</h1>
+
+<h2>Dropdown</h2>
+
+<div class="row">
+  <div class="col-md-6">
+    <my-dropdown [items]="items" [(dropdownTitle)]="dropdownTitle" (selectEvent)="processSelectEvent($event)"></my-dropdown>
+  </div>
+  <div class="col-md-6">
+    <div>
+      <p>Custom title: </p><input type="text" [(ngModel)]="dropdownTitle" name="dropdownTitle" />
+    </div>
+  </div>
+</div>
+
 <h2>Factorial</h2>
 <div>Факториал числа <input [(ngModel)]="x" name="x"> равен {{x | factorial}}</div>
 
@@ -26,7 +40,5 @@
   <child-comp [(userName)]="name"></child-comp>
   <div>Selected name: {{name}}</div>
 </div>
-
-<h2>Dropdown</h2>
 
 

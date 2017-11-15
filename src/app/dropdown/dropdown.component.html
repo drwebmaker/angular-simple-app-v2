@@ -1,0 +1,11 @@
+<div class="btn-group" dropdown>
+  <button type="button" (click)="toggleDropdown($event)" class="btn btn-primary dropdown-toggle">
+    {{ dropdownTitle }} <span class="caret"></span>
+  </button>
+  <ul [class.open]="open" class="dropdown-menu" role="menu">
+    <li *ngFor="let item of items"><a target="_blank" class="dropdown-item" href="{{ item.link }}" (click)="onSelect(item)">{{ item.label }}</a></li>
+  </ul>
+</div>
+
+
+
