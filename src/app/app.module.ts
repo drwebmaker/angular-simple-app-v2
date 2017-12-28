@@ -8,12 +8,18 @@ import { DashboardComponent } from './dashboard.component';
 import { OutputInputComponent } from './outputInput.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 
+
+
 import { FactorialPipe } from './factorial.pipe';
 import { FindPhone } from './find-phone.pipe';
 import {HttpModule} from '@angular/http';
 
 import { HttpService } from './http.service';
+import { PopoverModule } from 'ngx-bootstrap';
 
+import { PiPopoverDirective } from './pi-popover.directive';
+import { PersonComponent } from './pi-popover.directive';
+import { PopoverTemplateService } from './pi-popover.directive';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -25,16 +31,20 @@ import { AppRoutingModule }     from './app-routing.module';
     OutputInputComponent,
     DropdownComponent,
     FactorialPipe,
-    FindPhone
+    FindPhone,
+    PiPopoverDirective,
+    PersonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    PopoverModule.forRoot()
   ],
-  providers: [HttpService],
+  providers: [HttpService, PopoverTemplateService],
   bootstrap: [AppComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  entryComponents: [PersonComponent]
 })
 export class AppModule { }
