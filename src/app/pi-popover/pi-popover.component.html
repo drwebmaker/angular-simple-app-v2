@@ -1,0 +1,9 @@
+<ng-template #popoverTemp>
+    <div [ngSwitch]="options.type">
+        <div *ngSwitchCase="'paragraph'">
+            User 1: {{options.type}}
+            <br />
+            Param2: {{options.title}}
+        </div>
+    </div>
+</ng-template>

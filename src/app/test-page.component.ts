@@ -19,6 +19,40 @@ export class TestPageComponent implements OnInit {
   items: any = [];
   dropdownTitle: string = "Button dropdown";
 
+  piOptions = {
+    type: 'paragraph',
+    title: "Title"
+  };
+
+  piOptions2 = {
+    type: 'paragraph',
+    title: "Title2"
+  };
+
+  paragraphOptions = {
+    type: 'paragraph',
+    content: [
+      {
+        title: 'Test title 1',
+        paragraph: 'Test paragraph 1'
+      },
+      {
+        title: 'Test title 2',
+        paragraph: 'Test paragraph 2'
+      }
+    ]
+  };
+
+  listOptions = {
+    type: 'list',
+    content: ['Item 1', 'Item 2', 'Item 3']
+  };
+
+  textOptions = {
+    type: 'text',
+    content: 'Jast text. Jast text. Jast text.'
+  };
+
   processSelectEvent (e) {
     console.log(e);
   }

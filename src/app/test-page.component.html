@@ -42,14 +42,23 @@
 </div>
 
 <div class="test-popover" style="margin: 50px 0;">
-  <button class="btn btn-primary" piPopover >Test Button</button>
+  <button class="btn btn-primary" [piPopover]="topPop">Test Button1</button>
   <div>
-      <app-user-list></app-user-list>
-    <!-- <ng-template #testPop>
-        <app-user-list></app-user-list>
-    </ng-template> -->
+    <ng-template #topPop>
+        <div>Hello world!!!</div>
+    </ng-template>
     
   </div>
   
 </div>
 
+<div class="test-popover" style="margin: 50px 0;">
+  <button class="btn btn-primary" piPopover [piOptions]="piOptions">Test Button2</button>
+  <div>
+      <app-user-list></app-user-list>
+  </div>
+</div>
+
+<div class="test-popover" style="margin: 50px 0;">
+  <button class="btn btn-primary" piPopover [piOptions]="piOptions2">Test Button3</button>
+</div>

@@ -17,9 +17,7 @@ import {HttpModule} from '@angular/http';
 import { HttpService } from './http.service';
 import { PopoverModule } from 'ngx-bootstrap';
 
-import { PiPopoverDirective } from './pi-popover.directive';
-import { PersonComponent } from './pi-popover.directive';
-import { PopoverTemplateService } from './pi-popover.directive';
+import { PiPopoverDirective, PersonComponent, PopoverService } from './pi-popover/pi-popover.directive';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -42,7 +40,7 @@ import { AppRoutingModule }     from './app-routing.module';
     HttpModule,
     PopoverModule.forRoot()
   ],
-  providers: [HttpService, PopoverTemplateService],
+  providers: [HttpService, PopoverService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   entryComponents: [PersonComponent]
